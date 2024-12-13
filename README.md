@@ -33,3 +33,76 @@
 ## 使用说明
 
 1. 安装依赖： 
+bash
+pip install moviepy numpy decorator imageio imageio-ffmpeg proglog requests tqdm pillow
+
+2. 准备文件：
+   - 将图片文件放入指定目录
+   - 准备背景音乐文件
+
+3. 配置路径：
+   - 修改 `image_dir`: 图片目录路径
+   - 修改 `audio_path`: 音频文件路径
+   - 输出目录默认在脚本所在目录的 `output` 文件夹中
+
+4. 运行脚本：
+bash
+python video_maker.py
+
+## 参数说明
+
+- `batch_size`: 每个视频包含的图片数量，默认为10
+- `max_videos`: 限制生成的视频数量，默认为None（不限制）
+- `duration`: 每张图片的显示时长，默认为2秒
+
+## 注意事项
+
+1. 图片要求：
+   - 支持的格式：jpg, jpeg, png
+   - 建议图片尺寸一致
+   - 按文件名排序处理
+
+2. 性能考虑：
+   - 处理大量图片时注意内存使用
+   - 可以通过 `max_videos` 参数限制处理数量
+   - 及时清理生成的视频文件
+
+3. 视频质量：
+   - 输出视频为H.264编码
+   - 帧率为24fps
+   - 音频使用AAC编码
+
+4. 常见问题：
+   - 确保所有路径正确
+   - 检查图片文件是否可以正常打开
+   - 确保有足够的磁盘空间
+
+## 项目结构
+
+```
+project/
+    ├── .venv/          # 虚拟环境
+    ├── output/         # 生成的视频文件
+    ├── video_maker.py  # 主程序
+    └── README.md       # 说明文档
+```
+
+## 开发环境
+
+- Python 3.9+
+- moviepy 1.0.3
+- Pillow 9.5.0+
+
+## License
+
+MIT License
+```
+
+
+这个README文件包含了：
+1. 项目的基本介绍
+2. 主要功能说明
+3. 技术实现细节
+4. 使用方法和注意事项
+5. 项目结构和环境要求
+
